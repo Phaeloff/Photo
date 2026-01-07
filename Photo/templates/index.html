@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>
+        {%block titulo%}
+        Photo
+        {%endblock%}
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    {% block body %}
+    <body>
+        <h1>Photo</h1>
+        {%block formulario%}
+        <form method="POST">
+        {{ form.csrf_token }}
+
+            {{ form.email.label()}} {{ form.email()}}
+
+            {{ form.senha.label()}} {{ form.senha()}}
+
+            {{ form.botao_submit_login()}}
+
+        </form>
+        {% endblock %}
+    </body>
+    {% endblock %}
+
+
+</html>
