@@ -6,3 +6,12 @@ Werkzeug
 Flask-WTF
 email-validator
 Pillow
+Routes
+forms
+os
+models
+Photos
+templates
+static
+pycache
+instance
