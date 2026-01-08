@@ -1,7 +1,7 @@
 #criar os formulados do nosso site
 from flask_wtf import FlaskForm
 from email_validator import EmailNotValidError, validate_email
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, FileField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from Photo.models import Usuario
 
@@ -43,4 +43,7 @@ class FormCriarConta(FlaskForm):
         usuario = Usuario.query.filter_by(username=username.data).first()
         if usuario:
             raise ValidationError("Nome de usuário já cadastrado. Por favor, utilize outro nome de usuário.")
-    
+
+class FormFoto(FlaskForm):
+    foto = FileField("Selecione a Foto", validators=[DataRequired()])
+    botao_submit_foto = SubmitField("Enviar")
