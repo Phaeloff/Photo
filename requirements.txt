@@ -7,3 +7,4 @@ Flask-WTF
 email-validator
 Pillow
 oscrypto
+gunicorn
